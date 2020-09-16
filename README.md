@@ -1,2 +1,4 @@
 # ScaleCoding
-A real-time pipeline for video-based action recognition with spatio-temporal scale coded BoW representations
+Producing a Spatio-temporal scale coded Bag-of-Words for video based action recognition
+
+All code is done in python 3.7
