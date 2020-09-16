@@ -1,0 +1,12 @@
+#Scale Coded Dense Trajectories
+
+Dense Trajctory Computation as per:
+[1] Wang, Heng, et al. "Dense trajectories and motion boundary descriptors for action recognition." International journal of computer vision 103.1 (2013): 60-79.
+
+The code from https://lear.inrialpes.fr/people/wang/dense_trajectories was adapted for python 3.7
+Dense Trajectory features generated is saved as "(video_path)_features.txt"
+Scale Coded DT features saved as "(video_path)_features_scale_coded.txt"
+
+Additional Software Packages Required:
+numpy 1.17.2
+opencv-python 4.1.1.26
