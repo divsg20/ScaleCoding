@@ -32,7 +32,17 @@ def main(video_path, show_track=False, quality=0.001, min_distance=5, init_gap=1
 	#generate scale coded features
 	SC_features = tools.get_spat_pyramids(dtFeatures, clusters)
 	scpath = video_path[:-4] + "_features_scale_coded.txt"
-	np.savetxt(SC_features, scpath)
+	np.savetxt(scpath, SC_features)
+	"""
+	SC_features structure:
+	desc1 : |pyr1_s1|pyr1_s2|...|pyr1_sp|pyr2_s1|...|pyr2_sp|...|pyr6_sp|
+	desc2 : |pyr1_s1|pyr1_s2|...|pyr1_sp|pyr2_s1|...|pyr2_sp|...|pyr6_sp|
+	...
+	desc5 : |pyr1_s1|pyr1_s2|...|pyr1_sp|pyr2_s1|...|pyr2_sp|...|pyr6_sp|
+	each row is a descriptor. Pyramids for each row (descriptor) were concatenated. Thus, every 4000*p is a new pyr. pis the number of scale partitions.
+	Note pyr scale was not pooled and normalized to form the complete scale spatio-temporal pyramids representation.
+	This was done to allow for other pooling and normalizing schemes to be investigated when dealing with the added dimension of scale.
+	"""
 
 if __name__ == "__main__":
 	#change path to you video
